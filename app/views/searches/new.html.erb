@@ -1,0 +1,8 @@
+<h1>Welcome to APIcurious!</h1>
+<p>
+  Please enter the name of the restaurant you would like to search for:
+</p>
+<%= simple_form_for @search do |f| %>
+  <%= f.input :name, label: "Restaurant name" %>
+  <%= f.submit %>
+<% end %>
