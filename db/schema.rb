@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 20161220174111) do
   end
 
   create_table "violations", force: :cascade do |t|
-    t.datetime "inspection_date"
     t.integer  "response_id"
-    t.integer  "inspection_score"
+    t.string   "inspection_date"
+    t.string   "inspection_score"
     t.string   "inspection_id"
     t.string   "risk_category"
     t.string   "violation_description"

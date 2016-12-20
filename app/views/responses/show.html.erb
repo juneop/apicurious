@@ -1,0 +1,9 @@
+<h1><%= @response.business_name %></h1>
+<h3><%= @response.business_address %></h3>
+<ul>
+  <% @violations.each do |violation| %>
+  <li>
+    <%= violation.violation_description %>
+  </li>
+  <% end %>
+</ul>
