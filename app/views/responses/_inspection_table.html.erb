@@ -1,17 +1,19 @@
-<h5>Inspection Date: <%= inspection.inspection_date %></h5>
-<h5>Inspection Score: <%= inspection.inspection_score %></h5>
-<h5>Inspection ID: <%= inspection.inspection_id %></h5>
-<h5>Inspection Violations:</h5>
-<table>
-  <tr>
-    <th>Violation</th>
-    <th>Risk Category</th>
-  </tr>
-  <% inspection.violations.each do |violation| %>
+<% if inspection.inspection_score %>
+  <h5>Inspection Date: <%= inspection.inspection_date %></h5>
+  <h5>Inspection Score: <%= inspection.inspection_score %></h5>
+  <h5>Inspection ID: <%= inspection.inspection_id %></h5>
+  <h5>Inspection Violations:</h5>
+  <table>
     <tr>
-      <td><%= violation.violation_description %></td>
-      <td><%= violation.risk_category %></td>
+      <th>Violation</th>
+      <th>Risk Category</th>
     </tr>
-  <% end %>
-</table>
-<hr>
+    <% inspection.violations.each do |violation| %>
+      <tr>
+        <td><%= violation.violation_description %></td>
+        <td><%= violation.risk_category %></td>
+      </tr>
+    <% end %>
+  </table>
+  <hr>
+<% end %>

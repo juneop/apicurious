@@ -8,7 +8,7 @@ class Response < ApplicationRecord
     words.each do |w|
       w = w.capitalize!
     end
-    words.join(" ")
+    words.join(" ").gsub("'", "''")
   end
 
 end

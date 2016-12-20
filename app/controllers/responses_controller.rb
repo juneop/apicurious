@@ -1,4 +1,5 @@
 class ResponsesController < ApplicationController
+  
   URL = "https://data.sfgov.org/resource/sipz-fjte.json"
 
   def new
