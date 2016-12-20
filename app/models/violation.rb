@@ -1,15 +1,18 @@
 class Violation < ApplicationRecord
+  require 'date'
 
-  belongs_to :response
+  belongs_to :inspection
 
-  def self.create_violations(data, response)
+  def self.create_violations(data, inspection)
     data.each do |v|
-      Violation.create!(response_id: response.id,
-                    inspection_date: v["inspection_date"],
-                   inspection_score: v["inspection_score"],
-                      inspection_id: v["inspection_id"],
+      if inspection.inspection_id == v["inspection_id"]
+        Violation.create!(inspection_id: inspection.id,
+                   business_address: v["business_address"],
                       risk_category: v["risk_category"],
               violation_description: v["violation_description"])
+      else
+        next
+      end
     end
   end
 

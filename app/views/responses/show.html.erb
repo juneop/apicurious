@@ -1,9 +1,21 @@
 <h1><%= @response.business_name %></h1>
-<% @violations.each do |violation| %>
-  <ul>
-    <li>
-      <%= violation.violation_description %>
-      <%= violation.inspection_score %>
-    </li>
-  </ul>
+<hr>
+<% @inspections.each do |inspection| %>
+  <h5>Inspection Date: <%= inspection.inspection_date %></h5>
+  <h5>Inspection Score: <%= inspection.inspection_score %></h5>
+  <h5>Inspection ID: <%= inspection.inspection_id %></h5>
+  <h5>Inspection Violations:</h5>
+  <table>
+    <tr>
+      <th>Violation</th>
+      <th>Risk Category</th>
+    </tr>
+    <% inspection.violations.each do |violation| %>
+      <tr>
+        <td><%= violation.violation_description %></td>
+        <td><%= violation.risk_category %></td>
+      </tr>
+    <% end %>
+  </table>
+  <hr>
 <% end %>

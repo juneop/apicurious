@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161220174111) do
+ActiveRecord::Schema.define(version: 20161220212835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "inspections", force: :cascade do |t|
+    t.integer  "response_id"
+    t.string   "inspection_date"
+    t.string   "inspection_score"
+    t.string   "inspection_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "responses", force: :cascade do |t|
     t.string   "business_name"
@@ -28,13 +37,10 @@ ActiveRecord::Schema.define(version: 20161220174111) do
   end
 
   create_table "violations", force: :cascade do |t|
-    t.integer  "response_id"
     t.string   "business_address"
-    t.string   "inspection_date"
-    t.string   "inspection_score"
-    t.string   "inspection_id"
     t.string   "risk_category"
     t.string   "violation_description"
+    t.string   "inspection_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
   end

@@ -1,6 +1,7 @@
 class Response < ApplicationRecord
 
-  has_many :violations
+  has_many :inspections
+  has_many :violations, through: :inspections
 
   def format_name
     words = self.business_name.split(" ")
