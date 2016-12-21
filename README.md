@@ -1,24 +1,3 @@
-# README
+[APIcurious](https://obscure-reaches-26420.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- This simple app allows you to jump right in to checking out health inspections of local restaurants in San Francisco based on city data made available by [SF OpenData](https://data.sfgov.org/Health-and-Social-Services/Food-Inspections-LIVES-Standard/pyih-qa8i)
